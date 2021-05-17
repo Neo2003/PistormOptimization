@@ -1,0 +1,12 @@
+[Unit]
+Description=Starts Pistorm Emulator
+
+[Service]
+ExecStart=/mnt/Amiga/pistorm/emulator
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=piservice
+WorkingDirectory=/mnt/Amiga/pistorm/
+
+[Install]
+WantedBy=basic.target 
