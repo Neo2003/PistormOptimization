@@ -52,3 +52,19 @@ Then you will need to add the following line at the end of the file:
 See the above picture to see the result
 
 ![Fstab2](https://user-images.githubusercontent.com/28825/118681869-385c0e80-b800-11eb-99e3-338dfa8313d8.png)
+
+No run 02-Edit-Fstab.sh to make these changes listed before to the fstab:
+
+`sudo ./02-Edit-Fstab.sh`
+
+Once done, you can go on with the reste of the files:
+
+`sudo ./03-Complete-RO.sh`
+
+`sudo ./04-Move-emulator.sh`
+
+This last one will move the emulator to /mnt/Amiga we declared in fstab and create a service to start it.
+
+Now that everything is done, reboot and be happy with a fast startup and a safe system.
+
+`sudo reboot`
