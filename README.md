@@ -4,24 +4,20 @@ The goal is to cleanup a bit the Raspbian OS and make the root partition read-on
 
 # Prerequisite
 
-You must partition the SD card. You can use GParted on Linux, a GParted live on USB pen if you use Widnows or the partition tool from Paragon.
+You must partition the SD card. You can use GParted on Linux, a GParted live on USB pen if you use Windows or the partition tool from Paragon.
 You have to shrink the root partition to something like 3.5GB, and create another primary partition after the root one using the remaining space.
 
 # What these scripts are doing
 
-01-Cleanup.sh will make other .sh file executable and do some cleanup on Raspbian OS by removing unnecessary services.
+* 01-Cleanup.sh will make other .sh file executable and do some cleanup on Raspbian OS by removing unnecessary services.
+* 02-Edit-Fstab.sh will only open the editor, please read bellow before running it to learn how to modify the fstab.
+* 03-Complete-RO.sh will do the necessary actions to prepare the system to use a read-only root filesystem.
+* 04-Move-emulator.sh will move the pistorm emulator you previously installed in /home/pi/pistorm to the new partition and will install it as a service to be run as soon as the OS permit.
 
-02-Edit-Fstab.sh will only open the editor, please read bellow before running it to learn how to modify the fstab.
+# What is left to be done manualy (to be completed)
 
-03-Complete-RO.sh will do the necessary actions to prepare the system to use a read-only root filesystem.
-
-04-Move-emulator.sh will move the pistorm emulator you previously installed in /home/pi/pistorm to the new partition and will install it as a service to be run as soon as the OS permit.
-
-# What is left to be done manualy
-
-/boot/confit.txt
-
-/boot/cmdline.txt
+* /boot/confit.txt
+* /boot/cmdline.txt
 
 # Usage 
 
