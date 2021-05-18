@@ -111,31 +111,11 @@ This last one will move the emulator to /mnt/Amiga we declared in fstab and crea
 
 # Safe gard
 
-In case of problem, etit the file /etc/bash.bashrc
-
-Add this at the end is the file to be able to make the system writable again
-
-`set_bash_prompt() {`
-
-`    fs_mode=$(mount | sed -n -e "s/^\/dev\/.* on \/ .*(\(r[w|o]\).*/\1/p")`
-
-`    PS1='\[\033[01;32m\]\u@\h${fs_mode:+($fs_mode)}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '`
-
-`}`
-
-`alias ro='sudo mount -o remount,ro / ; sudo mount -o remount,ro /boot'`
-
-`alias rw='sudo mount -o remount,rw / ; sudo mount -o remount,rw /boot'`
-
-`PROMPT_COMMAND=set_bash_prompt`
+In case of problem, files /etc/bash.bashrc and /etc/bash.bash_logout have been updated.
 
 You will then be able to execute `rw` to get write access and `ro` to lock it again.
 
-Also create /etc/bash.bash_logout to lock the system when you end your session:
-
-`mount -o remount,ro /`
-
-`mount -o remount,ro /boot`
+# End
 
 Now that everything is done, reboot and be happy with a fast startup and a safe system.
 
