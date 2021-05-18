@@ -17,10 +17,35 @@ You have to shrink the root partition to something like 3.5GB, and create anothe
 * 03-Complete-RO.sh will do the necessary actions to prepare the system to use a read-only root filesystem.
 * 04-Move-emulator.sh will move the pistorm emulator you previously installed in /home/pi/pistorm to the new partition and will install it as a service to be run as soon as the OS permit.
 
-# What is left to be done manualy (to be completed)
+# What is left to be done manualy
 
-* /boot/confit.txt
-* /boot/cmdline.txt
+* Edit the option file located in /boot/config.txt. You can plug the SD in a Windows/Linux PC and edit the file on the FAT partition.
+
+Add the following content:
+
+`# Disable the rainbow splash screen`
+
+`disable_splash=1`
+
+`# Disable bluetooth`
+
+`dtoverlay=pi3-disable-bt`
+
+`# Overclock the SD Card from 50 to 100MHz`
+
+`# This can only be done with at least a UHS Class 1 card marked U with a '1' inside`
+
+`dtoverlay=sdtweak,overclock_50=100`
+ 
+`# Set the bootloader delay to 0 seconds. The default is 1s.`
+
+`boot_delay=0`
+
+* Edit the file /boot/cmdline.txt to add kernel parameters. As above it's also located on the FAT partition.
+
+Add this options at the end of the line:
+
+` fastboot noswap ro`
 
 # Usage 
 
