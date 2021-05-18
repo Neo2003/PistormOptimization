@@ -21,7 +21,7 @@ You have to shrink the root partition to something like 3.5GB, and create anothe
 
 * Edit the option file located in /boot/config.txt. You can plug the SD in a Windows/Linux PC and edit the file on the FAT partition.
 
-Add the following content:
+Add the following content in the ending [all] section:
 
 `# Disable the rainbow splash screen`
 
@@ -46,6 +46,16 @@ Add the following content:
 Add this options at the end of the line:
 
 ` fastboot noswap ro`
+
+Last one to be able to make the system work in read-only mode.
+
+Edit file /lib/systemd/system/systemd-random-seed.service
+
+Then add the folowing line in [Service] section before ExecStart:
+
+`ExecStartPre=/bin/echo "" >/tmp/random-seed`
+
+![Random](https://user-images.githubusercontent.com/28825/118709811-c0044600-b81d-11eb-8afc-efafabd6299f.png)
 
 # Usage 
 
@@ -80,6 +90,11 @@ See the above picture to see the result
 
 ![Fstab2](https://user-images.githubusercontent.com/28825/118681869-385c0e80-b800-11eb-99e3-338dfa8313d8.png)
 
+Now, make the root and boot partition read-only by adding ',ro' in the parameters:
+
+![Fstab3](https://user-images.githubusercontent.com/28825/118708045-87fc0380-b81b-11eb-8397-253e18b7a4c9.png)
+
+
 Now run 02-Edit-Fstab.sh to make these changes listed before to the fstab:
 
 `sudo ./02-Edit-Fstab.sh`
@@ -91,6 +106,34 @@ Once done, you can go on with the rest of the files:
 `sudo ./04-Move-emulator.sh`
 
 This last one will move the emulator to /mnt/Amiga we declared in fstab and create a service to start it.
+
+# Safe gard
+
+In case of problem, etit the file /etc/bash.bashrc
+
+Add this at the end is the file to be able to make the system writable again
+
+`set_bash_prompt() {`
+
+`    fs_mode=$(mount | sed -n -e "s/^\/dev\/.* on \/ .*(\(r[w|o]\).*/\1/p")`
+
+`    PS1='\[\033[01;32m\]\u@\h${fs_mode:+($fs_mode)}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '`
+
+`}`
+
+`alias ro='sudo mount -o remount,ro / ; sudo mount -o remount,ro /boot'`
+
+`alias rw='sudo mount -o remount,rw / ; sudo mount -o remount,rw /boot'`
+
+`PROMPT_COMMAND=set_bash_prompt`
+
+You will then be able to execute `rw` to get write access and `ro` to lock it again.
+
+Also create /etc/bash.bash_logout to lock the system when you end your session:
+
+`mount -o remount,ro /`
+
+`mount -o remount,ro /boot`
 
 Now that everything is done, reboot and be happy with a fast startup and a safe system.
 
