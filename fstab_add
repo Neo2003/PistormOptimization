@@ -1,0 +1,4 @@
+
+tmpfs        /tmp            tmpfs   nosuid,nodev         0       0
+tmpfs        /var/log        tmpfs   nosuid,nodev         0       0
+tmpfs        /var/tmp        tmpfs   nosuid,nodev         0       0
