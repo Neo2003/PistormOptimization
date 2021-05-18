@@ -6,6 +6,7 @@ The goal is to cleanup a bit the Raspbian OS and make the root partition read-on
 
 You must partition the SD card. You can use GParted on Linux, a GParted live on USB pen if you use Windows or the partition tool from Paragon.
 You have to shrink the root partition to something like 3.5GB, and create another primary partition after the root one using the remaining space.
+![Partitions](https://user-images.githubusercontent.com/28825/118687251-1618bf80-b805-11eb-9142-072d5efb29bd.png)
 
 # What these scripts are doing
 
