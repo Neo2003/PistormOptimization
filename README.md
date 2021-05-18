@@ -61,7 +61,11 @@ To begin, you will need to pull this repository, do this by entering the followi
 
 `git clone https://github.com/Neo2003/PistormOptimization.git`
 
-Then make the first file executable:
+CD inside this new folder:
+
+`cd PistormOptimization`
+
+Make the first file executable:
 
 `chmod +x 01-Cleanup.sh`
 
