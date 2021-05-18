@@ -80,22 +80,9 @@ You will need to add a line in fstab, for this copy the line with "/  ext4" and 
 
 ![Fstab1](https://user-images.githubusercontent.com/28825/118681842-32662d80-b800-11eb-8fd6-ba336a1b81d2.png)
 
-Then you will need to add the following lines at the end of the file:
-
-`tmpfs        /tmp            tmpfs   nosuid,nodev         0       0`
-
-`tmpfs        /var/log        tmpfs   nosuid,nodev         0       0`
-
-`tmpfs        /var/tmp        tmpfs   nosuid,nodev         0       0`
-
-See the above picture to see the result
-
-![Fstab2](https://user-images.githubusercontent.com/28825/118681869-385c0e80-b800-11eb-99e3-338dfa8313d8.png)
-
 Now, make the root and boot partition read-only by adding ',ro' in the parameters:
 
-![Fstab3](https://user-images.githubusercontent.com/28825/118708045-87fc0380-b81b-11eb-8397-253e18b7a4c9.png)
-
+![Fstab3](https://user-images.githubusercontent.com/28825/118725685-8db01400-b830-11eb-9024-615a7491c24c.png)
 
 Now run 02-Edit-Fstab.sh to make these changes listed before to the fstab:
 
