@@ -1,6 +1,6 @@
 # Pistorm Optimization
 
-The goal is to cleanup a bit the Raspbian OS and make the root partition read-only, but also start the Pistomr emulator the earliest possible.
+The goal is to cleanup a bit the Raspbian OS and make the root partition read-only so that you can power off the Amiga without worrying about the SD corruption, but also start the Pistorm emulator the earliest possible.
 
 # DONT'T USE IT YET, IT'S IN PROGRESS
 
@@ -43,7 +43,7 @@ You will need to add a line in fstab, for this copy the line with "/  ext4" and 
 
 ![Fstab1](https://user-images.githubusercontent.com/28825/118681842-32662d80-b800-11eb-8fd6-ba336a1b81d2.png)
 
-Then you will need to add the following line at the end of the file:
+Then you will need to add the following lines at the end of the file:
 
 `tmpfs        /tmp            tmpfs   nosuid,nodev         0       0`
 
@@ -55,11 +55,11 @@ See the above picture to see the result
 
 ![Fstab2](https://user-images.githubusercontent.com/28825/118681869-385c0e80-b800-11eb-99e3-338dfa8313d8.png)
 
-No run 02-Edit-Fstab.sh to make these changes listed before to the fstab:
+Now run 02-Edit-Fstab.sh to make these changes listed before to the fstab:
 
 `sudo ./02-Edit-Fstab.sh`
 
-Once done, you can go on with the reste of the files:
+Once done, you can go on with the rest of the files:
 
 `sudo ./03-Complete-RO.sh`
 
