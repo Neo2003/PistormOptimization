@@ -140,3 +140,9 @@ Also create /etc/bash.bash_logout to lock the system when you end your session:
 Now that everything is done, reboot and be happy with a fast startup and a safe system.
 
 `sudo reboot`
+
+# Author
+
+Made by Rodrik Studio
+
+Youtube channel: https://www.youtube.com/c/RodrikStudio
