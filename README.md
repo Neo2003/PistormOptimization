@@ -2,6 +2,8 @@
 
 The goal is to cleanup a bit the Raspbian OS and make the root partition read-only, but also start the Pistomr emulator the earliest possible.
 
+# DONT'T USE IT YET, IT'S IN PROGRESS
+
 # Prerequisite
 
 You must partition the SD card. You can use GParted on Linux, a GParted live on USB pen if you use Windows or the partition tool from Paragon.
