@@ -6,3 +6,4 @@ touch /tmp/dhcpcd.resolv.conf
 ln -s /tmp/dhcpcd.resolv.conf /etc/resolv.conf
 cat bash_logout > /etc/bash.bash_logout
 cat bashrc >> /etc/bash.bashrc
+cat fstab_add >> /etc/fstab
