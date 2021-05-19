@@ -1,3 +1,5 @@
+scripts/01-system.ksh
+scripts/01-cmdline.ksh
 rm -rf /var/lib/dhcp /var/lib/dhcpcd5 /var/spool /etc/resolv.conf
 ln -s /tmp /var/lib/dhcp
 ln -s /tmp /var/lib/dhcpcd5
