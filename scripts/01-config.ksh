@@ -1,5 +1,6 @@
-FNAME=config.txt
+#!/usr/bin/bash
 
+FNAME=/boot/config.txt
 
 disable_splash() {
 	egrep -q disable_splash ${FNAME} && return
