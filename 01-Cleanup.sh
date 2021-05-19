@@ -9,3 +9,6 @@ systemctl disable raspi-config.service
 systemctl disable rpi-eeprom-update.service
 apt-get -y install busybox-syslogd
 apt-get -y remove --purge rsyslog
+scripts/01-cmdline.ksh
+scripts/01-config.ksh
+scripts/01-system.ksh
