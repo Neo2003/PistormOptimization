@@ -30,7 +30,7 @@ add_all_section() {
 main () {
 	if [ ! -f ${FNAME} ] 
 	then
-		echo "pas de fichier ${FNAME} present" 
+		echo "File ${FNAME} not found" 
 	       	return
 	fi
 	add_all_section
