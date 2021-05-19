@@ -1,4 +1,6 @@
-FNAME=cmdline.txt
+#!/usr/bin/bash
+
+FNAME=/boot/cmdline.txt
 
 add_cmd () {
 	egrep -q fastboot ${FNAME} || sed -i 's/$/ fastboot/' ${FNAME}
@@ -9,7 +11,7 @@ add_cmd () {
 main () {
 	if [ ! -f ${FNAME} ] 
 	then
-		echo "pas de fichier ${FNAME} present" 
+		echo "File ${FNAME} is not present" 
 	       	return
 	fi
 
