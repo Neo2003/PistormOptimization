@@ -11,7 +11,7 @@ clean_seed () {
 main () {
 	if [ ! -f ${FNAME} ] 
 	then
-		echo "pas de fichier ${FNAME} present" 
+		echo "File ${FNAME} not found" 
 	       	return
 	fi
 
