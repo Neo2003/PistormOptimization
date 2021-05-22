@@ -43,7 +43,7 @@ You will need to add a line in fstab, for this copy the line with "/    ext4" an
 
 Now, make the root and boot partition read-only by adding ',ro' in the parameters:
 
-![Fstab3](https://user-images.githubusercontent.com/28825/118725685-8db01400-b830-11eb-9024-615a7491c24c.png)
+![Fstab3](https://user-images.githubusercontent.com/28825/119234617-31e6d300-bb2f-11eb-81df-78eb5956946b.png)
 
 Run 02-Edit-Fstab.sh to make these listed changes to the fstab:
 
