@@ -1,7 +1,9 @@
 # Pistorm Optimization
 
-The goal of these scripts is to cleanup a bit the Raspbian OS automatically and make the root partition read-only so that you can power off the Amiga without worrying about SD card corruption. This will also make Pistorm emulator to start the earliest possible.
+The goal of these scripts is to cleanup a bit the Raspbian OS automatically and make the root partition read-only so that you can power off the Amiga without worrying about filesystem repair which lead faster to SD card corruption. This will also make Pistorm emulator to start the earliest possible.
 The Raspberry Pi will be reconfigured to start faster and use the full speed of the SD card.
+
+Making root filesystem read-only prevents the system from writing any file. The new partition is the only one writable. Amiga OS is light and does not write much. All this will allow more life time for the SD card and also allow the Amiga to be shutdown without worring about the Pi.
 
 # Prerequisite
 
